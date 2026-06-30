@@ -1,0 +1,31 @@
+baseURL = "https://go-ruby-time.github.io/"
+title = "go-ruby-time"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[params.phases]]
+  name = "Constructors"
+  status = "ready"
+  blurb = "`Now`, `At` / `AtNsec` / `AtTime` (`Time.at`), `UTC` (`Time.utc` / `gm`), `Local` (`Time.local` / `mktime`), `New` (fixed UTC offset), plus `Parse` (`Time.parse`) and `Strptime` (`Time.strptime`)."
+[[params.phases]]
+  name = "Components & conversions"
+  status = "ready"
+  blurb = "`Year` … `Sec`, `USec` / `NSec` / `Subsec`, `WDay` / `YDay` / `UTCOffset` / `Zone` / `GMT` / `DST`, the weekday predicates, and `to_i` / `to_f` / `to_r` / `to_a`."
+[[params.phases]]
+  name = "Zone shifts"
+  status = "ready"
+  blurb = "`UTCTime` (`getutc` / `utc` / `gmtime`), `GetLocal` (`getlocal(offset)`) and `ToLocal` (`localtime`) — preserving the instant while changing the observed offset."
+[[params.phases]]
+  name = "Arithmetic & ordering"
+  status = "ready"
+  blurb = "`Add` / `Sub` by fractional seconds, `Diff` (`Time - Time` → float), `Round` / `Floor` / `Ceil`, plus `Cmp` (`<=>`), `Before` / `After`, `Equal` and an `Equal`-consistent `Hash` — all offset-independent."
+[[params.phases]]
+  name = "Formatting"
+  status = "ready"
+  blurb = "`Strftime` (the full C/Ruby directive set: `%-`/`%_` flags, `%N`/`%L` sub-second, ISO week `%V`/`%G`, `%z`/`%:z`/`%::z` offsets), plus `Inspect`, `ToS`, `CTime`, `ISO8601`, `RFC2822` and `HTTPDate` — MRI's exact bytes."
+[[params.phases]]
+  name = "Differential oracle & coverage"
+  status = "ready"
+  blurb = "Every formatter, the full `strftime` corpus, the numeric accessors, arithmetic, `Parse` and `Strptime` cross-checked against the system `ruby` under `TZ=UTC` (gated on Ruby ≥ 4.0); 100% coverage, green across 6 arches and 3 OSes."
