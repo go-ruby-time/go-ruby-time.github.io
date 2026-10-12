@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{{/* Dark Reader repaints pages that already draw their own dark theme, as this one does: ask it to stand aside. */}}
+<meta name="darkreader-lock">
 <title>{{ .Site.Title }} — a pure-Go reimplementation of Ruby's Time class and time-parsing extensions, MRI byte-exact, no cgo</title>
 <meta name="description" content="go-ruby-time — A pure-Go reimplementation of Ruby's Time class and the time stdlib's parsing extensions, MRI byte-exact, no cgo.">
 <style>
