@@ -41,11 +41,9 @@
   <div class="hero"><div class="wrap">
     <div>
       <h1 class="head">go-ruby-time</h1>
-      <p class="sub">Ruby's Time class and the time stdlib's parsing extensions in pure Go — MRI byte-exact, no cgo.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="/docs/">{{ partial "icons/book.html" . }}Documentation</a>
-        <a class="btn btn-ghost" href="https://github.com/go-ruby-time/time">{{ partial "icons/github.html" . }}GitHub</a>
-      </div>
+      <p class="sub">Ruby's Time class and the time stdlib's parsing extensions in {{ if partial "mantra-on.html" . }}Go{{ else }}pure Go{{ end }} — MRI byte-exact, {{ if not (partial "mantra-on.html" $) }}no cgo{{ end }}.</p>
+      {{/* [[params.cta]] in hugo.toml: the kit renders the row */}}
+      {{ partial "cta.html" . }}
       <div class="trust">{{ if not (partial "mantra-on.html" $) }}<span class="pill">pure Go · zero cgo</span>{{ end }}<span class="pill">Ruby <code>Time</code></span><span class="pill">strftime / strptime</span><span class="pill">Time.parse</span><span class="pill">iso8601 · rfc2822 · httpdate</span><span class="pill">zone shifts</span><span class="pill">NowFunc seam</span><span class="pill">MRI byte-exact</span><span class="pill">100% coverage</span><span class="pill">6 arches</span></div>
       <div class="legacy"><div class="badges">
       <a href="/docs/"><img alt="Documentation (MkDocs Material + mike)" src="https://img.shields.io/badge/docs-mkdocs--material-9B1C2E"></a>
